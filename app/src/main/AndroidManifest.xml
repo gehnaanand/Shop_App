@@ -18,7 +18,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".HomeActivity" />
         <activity android:name=".ForgotPassActivity"></activity>
     </application>
 
