@@ -35,7 +35,7 @@ public class ForgotPassActivity extends AppCompatActivity {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email =
+                
             }
         });
 
