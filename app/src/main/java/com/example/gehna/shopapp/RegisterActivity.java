@@ -41,12 +41,22 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String mailStr = mail.getText().toString().trim();
                 String passwordStr = password.getText().toString().trim();
-
-                if(!password.getText().toString().equals(cpassword.getText().toString())){
-                    Toast.makeText(RegisterActivity.this, "Password does not match", Toast.LENGTH_SHORT).show();
+                String cpasswordStr = cpassword.getText().toString().trim();
+                
+                if (TextUtils.isEmpty(mailStr) && TextUtils.isEmpty(passwordStr)){
+                    Toast.makeText(RegisterActivity.this, "Enter Email and Password", Toast.LENGTH_SHORT).show();
                 }
-                if (!TextUtils.isEmpty(mailStr) && !TextUtils.isEmpty(passwordStr)) {
-
+                else if(TextUtils.isEmpty(mailStr)){
+                    Toast.makeText(RegisterActivity.this, "Enter Email", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(passwordStr)){
+                    Toast.makeText(RegisterActivity.this, "Enter Password", Toast.LENGTH_SHORT).show();
+                } else if(TextUtils.isEmpty(cpasswordStr)){
+                    Toast.makeText(RegisterActivity.this, "Confirm Password", Toast.LENGTH_SHORT).show();
+                }else if(!password.getText().toString().equals(cpassword.getText().toString())){
+                    Toast.makeText(RegisterActivity.this, "Password does not match", Toast.LENGTH_SHORT).show();
+                } else if(passwordStr.length() < 6){
+                    Toast.makeText(RegisterActivity.this, "Password must be minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                } else {
                     firebaseAuth.createUserWithEmailAndPassword(mailStr, passwordStr).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -58,18 +68,11 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         }
                     });
-
-                } else {
-
-                    if (TextUtils.isEmpty(mailStr) && TextUtils.isEmpty(passwordStr)){
-                        Toast.makeText(RegisterActivity.this, "Enter Email and Password", Toast.LENGTH_SHORT).show();
-                    }
-                    else if(TextUtils.isEmpty(mailStr)){
-                        Toast.makeText(RegisterActivity.this, "Enter Email", Toast.LENGTH_SHORT).show();
-                    } else if (TextUtils.isEmpty(passwordStr)){
-                        Toast.makeText(RegisterActivity.this, "Enter Password", Toast.LENGTH_SHORT).show();
-                    }
                 }
+                
+
+                    
+
             }
         });
 
