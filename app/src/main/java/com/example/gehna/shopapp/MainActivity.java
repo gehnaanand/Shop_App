@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         if(auth.getCurrentUser() != null) {
-           startActivity(new Intent(MainActivity.this, SelectActivity.class));
-           finish();
+          // startActivity(new Intent(MainActivity.this, SelectActivity.class));
+           //finish();
         }
         setContentView(R.layout.activity_main);
 
@@ -95,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-
+                                Intent intent = new Intent(MainActivity.this,SelectActivity.class);
+                                startActivity(intent);
 
                         }
                     }
