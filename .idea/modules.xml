@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ShopApp.iml" filepath="$PROJECT_DIR$/ShopApp.iml" />
+      <module fileurl="file://C:\Users\Aishwarya\AndroidStudioProjects\Shop_App\ShopApp.iml" filepath="C:\Users\Aishwarya\AndroidStudioProjects\Shop_App\ShopApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Shop_App.iml" filepath="$PROJECT_DIR$/Shop_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
