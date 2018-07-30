@@ -1,5 +1,6 @@
 package com.example.gehna.shopapp;
 
+
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         if(auth.getCurrentUser() != null) {
-          //startActivity(new Intent(MainActivity.this, SelectActivity.class));
-           //finish();
+            finish();
+            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+
         }
         setContentView(R.layout.activity_main);
 
@@ -39,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         inputEmail = findViewById(R.id.email);
         inputPassword = findViewById(R.id.password);
-        progressBar = findViewById(R.id.progressBar);
         buttonLogin = findViewById(R.id.login);
         textviewRegister = findViewById(R.id.register);
         textviewForgot = findViewById(R.id.forgot);
+        progressBar = findViewById(R.id.progressBar);
 
         //Get Firebase auth instance
 
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 String email = inputEmail.getText().toString();
                 final String password = inputPassword.getText().toString();
                 
@@ -78,14 +81,14 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+
 
                 //authenticate user
 
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressBar.setVisibility(View.GONE);
+
 
                         if(!task.isSuccessful()){
                             //if there is error
@@ -95,14 +98,18 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                                Intent intent = new Intent(MainActivity.this,SelectActivity.class);
+
+                                Intent intent = new Intent(MainActivity.this,HomeActivity.class);
                                 startActivity(intent);
 
                         }
                     }
                 });
+
+
             }
         });
+
 
     }
 }
