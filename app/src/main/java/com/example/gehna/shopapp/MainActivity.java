@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         if(auth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(MainActivity.this, SelectActivity.class));
+            startActivity(new Intent(MainActivity.this, HomeActivity.class));
 
         }
         setContentView(R.layout.activity_main);
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         } else {
 
-                                Intent intent = new Intent(MainActivity.this,SelectActivity.class);
+                                Intent intent = new Intent(MainActivity.this,HomeActivity.class);
                                 startActivity(intent);
 
                         }
