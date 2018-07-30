@@ -31,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         if(auth.getCurrentUser() != null) {
-          // startActivity(new Intent(MainActivity.this, SelectActivity.class));
-           //finish();
+            finish();
+            startActivity(new Intent(MainActivity.this, SelectActivity.class));
+
         }
         setContentView(R.layout.activity_main);
 
