@@ -114,29 +114,29 @@ public class HomeActivity extends AppCompatActivity
 
     private void initList(){
         mShopList=new ArrayList<>();
-        mShopList.add(new ShopItem("Forever 21",R.drawable.forever21_logo));
-        mShopList.add(new ShopItem("H&M",R.drawable.h_m));
-        mShopList.add(new ShopItem("Zara",R.drawable.zara_logo));
-        mShopList.add(new ShopItem("Nautica",R.drawable.nautica_logo));
+        mShopList.add(new ShopItem("Forever 21",R.mipmap.forever21_logo));
+        mShopList.add(new ShopItem("H&M",R.mipmap.h_m));
+        mShopList.add(new ShopItem("Zara",R.mipmap.zara_logo));
+        mShopList.add(new ShopItem("Nautica",R.mipmap.nautica_logo));
 
         colorlist=new ArrayList<>();
-        colorlist.add(new ShopItem("Black",R.drawable.black));
-        colorlist.add(new ShopItem("Brown",R.drawable.brown));
-        colorlist.add(new ShopItem("Grey",R.drawable.grey));
-        colorlist.add(new ShopItem("Lavender",R.drawable.lavender));
-        colorlist.add(new ShopItem("Magenta",R.drawable.magenta));
-        colorlist.add(new ShopItem("Red",R.drawable.red));
-        colorlist.add(new ShopItem("Turquoise Blue",R.drawable.turq_blue));
-        colorlist.add(new ShopItem("White",R.drawable.white));
-        colorlist.add(new ShopItem("Yellow",R.drawable.yellow));
+        colorlist.add(new ShopItem("Black",R.mipmap.black));
+        colorlist.add(new ShopItem("Brown",R.mipmap.brown));
+        colorlist.add(new ShopItem("Grey",R.mipmap.grey));
+        colorlist.add(new ShopItem("Lavender",R.mipmap.lavender));
+        colorlist.add(new ShopItem("Magenta",R.mipmap.magenta));
+        colorlist.add(new ShopItem("Red",R.mipmap.red));
+        colorlist.add(new ShopItem("Turquoise Blue",R.mipmap.turq_blue));
+        colorlist.add(new ShopItem("White",R.mipmap.white));
+        colorlist.add(new ShopItem("Yellow",R.mipmap.yellow));
 
         styleList=new ArrayList<>();
-        styleList.add(new ShopItem("Pant",R.drawable.pant));
-        styleList.add(new ShopItem("Shirts",R.drawable.shirt));
-        styleList.add(new ShopItem("T-Shirts",R.drawable.tshirt));
-        styleList.add(new ShopItem("Tops",R.drawable.tops));
-        styleList.add(new ShopItem("Shorts",R.drawable.shorts));
-        styleList.add(new ShopItem("Dress",R.drawable.dress));
+        styleList.add(new ShopItem("Pant",R.mipmap.pant));
+        styleList.add(new ShopItem("Shirts",R.mipmap.shirt));
+        styleList.add(new ShopItem("T-Shirts",R.mipmap.tshirt));
+        styleList.add(new ShopItem("Tops",R.mipmap.tops));
+        styleList.add(new ShopItem("Shorts",R.mipmap.shorts));
+        styleList.add(new ShopItem("Dress",R.mipmap.dress));
 
     }
 
