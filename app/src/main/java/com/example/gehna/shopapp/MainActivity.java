@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText inputEmail, inputPassword;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
-    private Button buttonLogin;
+    private Button buttonLogin,store_login;
     private TextView textviewRegister, textviewForgot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         textviewRegister = findViewById(R.id.register);
         textviewForgot = findViewById(R.id.forgot);
         progressBar = findViewById(R.id.progressBar);
+        store_login=findViewById(R.id.store_owner);
 
         //Get Firebase auth instance
 
@@ -61,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, ForgotPassActivity.class));
+            }
+        });
+
+        store_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,Store_Login.class));
             }
         });
         

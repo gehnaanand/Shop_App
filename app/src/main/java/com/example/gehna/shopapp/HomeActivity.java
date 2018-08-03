@@ -15,10 +15,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -27,6 +34,9 @@ public class HomeActivity extends AppCompatActivity
 
     private ArrayList<ShopItem> mShopList,colorlist,styleList;
     private ShopAdapter mAdapter,colorAdapter,styleAdapter;
+    private String clickedBrand,clickedColor,clickedStyle;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +83,8 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 ShopItem clickedItem =(ShopItem) parent.getItemAtPosition(position);
-                String clickedShopName=clickedItem.getShopName();
-                Toast.makeText(HomeActivity.this, clickedShopName +" Selected", Toast.LENGTH_SHORT).show();
+                clickedBrand=clickedItem.getShopName();
+                //Toast.makeText(HomeActivity.this, clickedShopName +" Selected", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -86,8 +96,8 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 ShopItem clickedItem=(ShopItem) parent.getItemAtPosition(position);
-                String clickedShopName=clickedItem.getShopName();
-                Toast.makeText(HomeActivity.this, clickedShopName +" Selected", Toast.LENGTH_SHORT).show();
+                clickedColor=clickedItem.getShopName();
+                //Toast.makeText(HomeActivity.this, clickedShopName +" Selected", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -100,8 +110,8 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 ShopItem clickedItem=(ShopItem) parent.getItemAtPosition(position);
-                String clickedShopName=clickedItem.getShopName();
-                Toast.makeText(HomeActivity.this, clickedShopName +" Selected", Toast.LENGTH_SHORT).show();
+                clickedStyle=clickedItem.getShopName();
+                //Toast.makeText(HomeActivity.this, clickedShopName +" Selected", Toast.LENGTH_SHORT).show();
 
             }
 
@@ -110,6 +120,20 @@ public class HomeActivity extends AppCompatActivity
 
             }
         });
+
+
+        Button submit=findViewById(R.id.submit);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(HomeActivity.this,Stores_Available.class);
+                intent.putExtra("Brand",clickedBrand);
+                intent.putExtra("Color",clickedColor);
+                intent.putExtra("Style",clickedStyle);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void initList(){

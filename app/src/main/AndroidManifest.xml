@@ -24,7 +24,11 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Store_Login" />
+        <activity android:name=".Store_Details" />
+        <activity android:name=".Store_Register" />
+        <activity android:name=".Stores_Available"></activity>
     </application>
 
 </manifest>

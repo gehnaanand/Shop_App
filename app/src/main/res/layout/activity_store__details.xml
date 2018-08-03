@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gehna.shopapp.Store_Details">
+
+    <EditText
+        android:id="@+id/brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Brand" />
+
+    <EditText
+        android:id="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/brand"
+        android:layout_alignRight="@+id/brand"
+        android:layout_below="@+id/brand"
+        android:layout_marginTop="57dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Color" />
+
+    <EditText
+        android:id="@+id/style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/color"
+        android:layout_alignEnd="@+id/color"
+        android:layout_alignRight="@+id/color"
+        android:layout_marginTop="57dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Style"
+        />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/style"
+        android:layout_centerHorizontal="true"/>
+
+
+
+</RelativeLayout>
