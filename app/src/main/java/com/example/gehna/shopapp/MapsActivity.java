@@ -75,7 +75,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         //String parentref = s1.getRef().getParent().getKey();
                         //if (owner1.getStore_name().equals(store_name)) {
                             LatLng location = new LatLng(owner1.getLatitude(), owner1.getLongitude());
-                            mMap.addMarker(new MarkerOptions().position(location).title(owner1.store_name)).setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
+                            mMap.addMarker(new MarkerOptions().position(location).title(owner1.store_name)).setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                              mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
                             //}
                     }

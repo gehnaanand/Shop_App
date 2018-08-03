@@ -43,7 +43,11 @@
 
     <Button
         android:id="@+id/login"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#2e2f30"
+        android:textColor="#fff"
+        android:layout_marginLeft="50dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/progressBar"
         android:layout_centerHorizontal="true"
