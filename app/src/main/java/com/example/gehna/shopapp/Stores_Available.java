@@ -89,7 +89,7 @@ public class Stores_Available extends AppCompatActivity {
 
         @NonNull
         @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             ViewHolder mainViewHolder=null;
             if(convertView==null){
                 LayoutInflater inflater=LayoutInflater.from(getContext());
@@ -101,7 +101,11 @@ public class Stores_Available extends AppCompatActivity {
                 viewHolder.button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        Intent intent=new Intent(Stores_Available.this,MapsActivity.class);
+                        String store_name=(String)getItem(position);
+                        intent.putExtra("Store Name",store_name);
                         //go to maps activity
+                        startActivity(intent);
                     }
                 });
                 convertView.setTag(viewHolder);

@@ -25,7 +25,7 @@ import java.security.acl.Owner;
 
 public class Store_Register extends AppCompatActivity {
 
-    EditText store_name,email,phone,password,confirm_pass;
+    EditText store_name,email,phone,password,confirm_pass,latitude,longitude;
     Button register;
     ProgressBar progressBar;
     FirebaseAuth auth;
@@ -40,8 +40,8 @@ public class Store_Register extends AppCompatActivity {
         phone=findViewById(R.id.phone);
         password=findViewById(R.id.password);
         confirm_pass=findViewById(R.id.confirm_pass);
-        //longitude=findViewById(R.id.longitude);
-        //latitude=findViewById(R.id.latitude);
+        longitude=findViewById(R.id.longitude);
+        latitude=findViewById(R.id.latitude);
         register=findViewById(R.id.register);
         progressBar=findViewById(R.id.progressBar);
 
@@ -54,6 +54,8 @@ public class Store_Register extends AppCompatActivity {
                 final String email_str=email.getText().toString();
                 final String cpassword=confirm_pass.getText().toString();
                 final String store_name_str=store_name.getText().toString();
+                final double longitude_str=Double.parseDouble(longitude.getText().toString());
+                final double latitude_str=Double.parseDouble(latitude.getText().toString());
 
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -91,7 +93,7 @@ public class Store_Register extends AppCompatActivity {
                                 Toast.makeText(Store_Register.this, "Authentication failed." + task.getException(),
                                         Toast.LENGTH_SHORT).show();
                             } else {
-                                owner owner1=new owner(store_name_str,email_str);
+                                owner owner1=new owner(store_name_str,email_str,longitude_str,latitude_str);
                                 DatabaseReference ref=FirebaseDatabase.getInstance().getReference("Store_Details");
                                 DatabaseReference childref=ref.child(store_name_str).push();
                                 childref.setValue(owner1);

@@ -51,9 +51,10 @@
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/progressBar"
+        android:layout_above="@+id/confirm_pass"
         android:layout_alignLeft="@+id/phone"
         android:layout_alignStart="@+id/phone"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -64,19 +65,19 @@
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/confirm_pass"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
+        android:layout_marginBottom="38dp"
         android:text="register" />
 
     <EditText
         android:id="@+id/confirm_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/register"
         android:layout_alignLeft="@+id/password"
         android:layout_alignStart="@+id/password"
-        android:layout_below="@+id/password"
-        android:layout_marginTop="11dp"
+        android:layout_marginBottom="11dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword" />
@@ -87,5 +88,27 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="invisible"/>
+
+    <EditText
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Longitude"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/latitude"
+        android:hint="Latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/password"
+        android:layout_alignRight="@+id/password"
+        android:layout_below="@+id/progressBar"
+        android:ems="10"
+        android:inputType="numberDecimal" />
 
 </RelativeLayout>
