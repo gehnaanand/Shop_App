@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "504252780692",
+    "firebase_url": "https://shopapp-da217.firebaseio.com",
+    "project_id": "shopapp-da217",
+    "storage_bucket": "shopapp-da217.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504252780692:android:70f41355837a6665",
+        "android_client_info": {
+          "package_name": "com.example.gehna.shopapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504252780692-g4k9jc2ijahfduv5udftraot6rvlersv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gehna.shopapp",
+            "certificate_hash": "76b48e12ac0e6c3e75b1c43b6ee3cbeb11e149bd"
+          }
+        },
+        {
+          "client_id": "504252780692-be4efs53qrbr9kn0ct422macuseah66t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gehna.shopapp",
+            "certificate_hash": "1b3788420ccb69ba5554307597f614a60b4b29a4"
+          }
+        },
+        {
+          "client_id": "504252780692-mr3tbnqhf5j3u8jsif6ndaonif8vkvgn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gehna.shopapp",
+            "certificate_hash": "ffc33b18625d56149abc5efdc0c8a66b7606a500"
+          }
+        },
+        {
+          "client_id": "504252780692-08adj35hoe9tpg5p09fpk47k6ork98r7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzegQGKkp3y7XnIQHwkcTxy2SRx1kwka0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504252780692-08adj35hoe9tpg5p09fpk47k6ork98r7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
