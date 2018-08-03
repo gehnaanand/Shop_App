@@ -86,11 +86,18 @@ public class Store_Register extends AppCompatActivity {
                         DatabaseReference users = database.getReference("users");
                         users.push().setValue(owner1);*/
 
+
                             if (!task.isSuccessful()) {
                                 Toast.makeText(Store_Register.this, "Authentication failed." + task.getException(),
                                         Toast.LENGTH_SHORT).show();
                             } else {
-                                startActivity(new Intent(Store_Register.this, Store_Login.class));
+                                owner owner1=new owner(store_name_str,email_str);
+                                DatabaseReference ref=FirebaseDatabase.getInstance().getReference("Store_Details");
+                                DatabaseReference childref=ref.child(store_name_str).push();
+                                childref.setValue(owner1);
+                                Intent intent=new Intent(Store_Register.this, Store_Details.class);
+                                intent.putExtra("Store Name",store_name_str);
+                                startActivity(intent);
                                 finish();
                             }
                         }

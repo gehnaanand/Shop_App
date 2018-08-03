@@ -95,7 +95,7 @@ public class Store_Login extends AppCompatActivity {
                                Toast.makeText(Store_Login.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                            }
                        } else {
-                            String store_name_str=store_name.getText().toString();
+                           String store_name_str=store_name.getText().toString();
                            Intent intent = new Intent(Store_Login.this,Store_Details.class);
                            intent.putExtra("Store Name",store_name_str);
                            startActivity(intent);

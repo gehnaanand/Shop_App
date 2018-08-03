@@ -48,6 +48,8 @@ public class Store_Details extends AppCompatActivity {
 
                 Intent intent=getIntent();
                 String store_name=intent.getStringExtra("Store Name");
+                //DatabaseReference store_details= FirebaseDatabase.getInstance().getReference("Store_Details");
+                //String store_name_ref=store_details.child(store_name).getKey();
 
 
                 final owner clothing=new owner(brand,color,style);
@@ -57,6 +59,9 @@ public class Store_Details extends AppCompatActivity {
                 DatabaseReference storeRef= ref.child(store_name);
                 DatabaseReference databaseReference=storeRef.push();
                 databaseReference.setValue(clothing);
+                ebrand.setText("");
+                estyle.setText("");
+                ecolor.setText("");
                 //storeRef.push().setValue(clothing);
 
             }
