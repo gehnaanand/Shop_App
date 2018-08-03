@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -17,6 +18,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import org.w3c.dom.Text;
 
 import java.security.acl.Owner;
 
@@ -52,9 +55,14 @@ public class Store_Register extends AppCompatActivity {
                 final String cpassword=confirm_pass.getText().toString();
                 final String store_name_str=store_name.getText().toString();
 
+                progressBar.setVisibility(View.VISIBLE);
+
 
                 if (TextUtils.isEmpty(email_str) && TextUtils.isEmpty(password_str)){
                     Toast.makeText(Store_Register.this, "Enter Email and Password", Toast.LENGTH_SHORT).show();
+                }
+                else if(TextUtils.isEmpty(store_name_str)){
+                    Toast.makeText(Store_Register.this, "Enter Store Name", Toast.LENGTH_SHORT).show();
                 }
                 else if(TextUtils.isEmpty(email_str)){
                     Toast.makeText(Store_Register.this, "Enter Email", Toast.LENGTH_SHORT).show();
@@ -72,7 +80,7 @@ public class Store_Register extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                         //owner owner1=new owner(store_name_str,password_str);
                         //Toast.makeText(Store_Register.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-                        progressBar.setVisibility(View.GONE);
+
 
                         /*FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference users = database.getReference("users");
