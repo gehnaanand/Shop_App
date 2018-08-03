@@ -55,8 +55,12 @@ public class Stores_Available extends AppCompatActivity {
                             continue;
                         }
                     }
-                    listView.setAdapter(adapter);
+
                     //listView.setAdapter(adapter);
+                }
+                listView.setAdapter(adapter);
+                if(list.isEmpty()){
+                    list.add("Not available in any stores!");
                 }
             }
 
