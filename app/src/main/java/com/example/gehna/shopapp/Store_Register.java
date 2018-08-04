@@ -1,6 +1,8 @@
 package com.example.gehna.shopapp;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,10 +34,18 @@ public class Store_Register extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseAuth auth;
 
+    ScrollView scrollView;
+    AnimationDrawable animationDrawable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store__register);
+
+        scrollView=(ScrollView) findViewById(R.id.scrollView);
+        animationDrawable=(AnimationDrawable)scrollView.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(2000);
+        animationDrawable.start();
 
         store_name=findViewById(R.id.store_name);
         email=findViewById(R.id.email);
@@ -45,6 +57,7 @@ public class Store_Register extends AppCompatActivity {
         register=findViewById(R.id.register);
         progressBar=findViewById(R.id.progressBar);
 
+
         auth=FirebaseAuth.getInstance();
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -54,21 +67,30 @@ public class Store_Register extends AppCompatActivity {
                 final String email_str=email.getText().toString();
                 final String cpassword=confirm_pass.getText().toString();
                 final String store_name_str=store_name.getText().toString();
-                final double longitude_str=Double.parseDouble(longitude.getText().toString());
-                final double latitude_str=Double.parseDouble(latitude.getText().toString());
+                final String phone_str=phone.getText().toString().trim();
+                final double longitude_str=Double.parseDouble(longitude.getText().toString().trim());
+                final double latitude_str=Double.parseDouble(latitude.getText().toString().trim());
+                Drawable drawable=getResources().getDrawable(R.drawable.ic_error);
 
-                progressBar.setVisibility(View.VISIBLE);
 
 
-                if (TextUtils.isEmpty(email_str) && TextUtils.isEmpty(password_str)){
-                    Toast.makeText(Store_Register.this, "Enter Email and Password", Toast.LENGTH_SHORT).show();
-                }
-                else if(TextUtils.isEmpty(store_name_str)){
+                if(TextUtils.isEmpty(store_name_str)){
                     Toast.makeText(Store_Register.this, "Enter Store Name", Toast.LENGTH_SHORT).show();
+                    store_name.setError("Enter Store Name",drawable);
                 }
                 else if(TextUtils.isEmpty(email_str)){
                     Toast.makeText(Store_Register.this, "Enter Email", Toast.LENGTH_SHORT).show();
-                } else if (TextUtils.isEmpty(password_str)){
+                }
+                else if(TextUtils.isEmpty(phone_str)){
+                    phone.setError("Enter Phone Number",drawable);
+                }
+                else if(longitude.getText().toString().trim().isEmpty()){
+                    longitude.setError("Enter Longitude",drawable);
+                }
+                else if(latitude.getText().toString().trim().isEmpty()){
+                    latitude.setError("Enter Latitude",drawable);
+                }
+                else if (TextUtils.isEmpty(password_str)){
                     Toast.makeText(Store_Register.this, "Enter Password", Toast.LENGTH_SHORT).show();
                 } else if(TextUtils.isEmpty(cpassword)){
                     Toast.makeText(Store_Register.this, "Confirm Password", Toast.LENGTH_SHORT).show();
@@ -82,13 +104,11 @@ public class Store_Register extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                         //owner owner1=new owner(store_name_str,password_str);
                         //Toast.makeText(Store_Register.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-
-
                         /*FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference users = database.getReference("users");
                         users.push().setValue(owner1);*/
 
-
+                            progressBar.setVisibility(View.VISIBLE);
                             if (!task.isSuccessful()) {
                                 Toast.makeText(Store_Register.this, "Authentication failed." + task.getException(),
                                         Toast.LENGTH_SHORT).show();

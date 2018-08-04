@@ -7,6 +7,7 @@ import android.location.LocationListener;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -72,12 +73,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     for(DataSnapshot s1:s.getChildren()) {
 
                         owner owner1 = s1.getValue(owner.class);
-                        //String parentref = s1.getRef().getParent().getKey();
-                        //if (owner1.getStore_name().equals(store_name)) {
+                        String parentref = s1.getRef().getParent().getKey();
+                        if (parentref.toString().trim().equals(store_name.toString().trim())) {
                             LatLng location = new LatLng(owner1.getLatitude(), owner1.getLongitude());
                             mMap.addMarker(new MarkerOptions().position(location).title(owner1.store_name)).setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-                             mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
-                            //}
+                            CameraUpdate update=CameraUpdateFactory.newLatLngZoom(location,20);
+                            mMap.moveCamera(update);
+                            //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+                        }
                     }
 
                 }

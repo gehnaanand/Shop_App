@@ -1,6 +1,7 @@
 package com.example.gehna.shopapp;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,12 +30,19 @@ public class Store_Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
 //    TextView register=findViewById(R.id.register);
 
+    RelativeLayout relativeLayout1;
+    AnimationDrawable animationDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store__login);
 
+        relativeLayout1=(RelativeLayout)findViewById(R.id.relativeLayout);
+        animationDrawable=(AnimationDrawable)relativeLayout1.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(2000);
+        animationDrawable.start();
 
         login=findViewById(R.id.login);
         register=findViewById(R.id.register);

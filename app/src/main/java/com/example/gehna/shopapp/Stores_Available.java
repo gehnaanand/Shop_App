@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -56,8 +57,8 @@ public class Stores_Available extends AppCompatActivity {
                         //Log.d(" ", owner1.getBrand().toString());
                         String parentref=ds.getRef().getParent().getKey();
                         //Log.d("Parent= ",parentref);
-                        if(clickedBrand.toLowerCase().toString().equals(owner1.getBrand().toString())&&clickedColor.toLowerCase().toString().equals(owner1.getColor()
-                        .toString())&&clickedStyle.toLowerCase().toString().equals(owner1.getStyle().toString())) {
+                        if(clickedBrand.toLowerCase().toString().trim().equals(owner1.getBrand().toLowerCase().toString().trim())&&clickedColor.toLowerCase().toString().trim().equals(owner1.getColor().toLowerCase()
+                        .toString().trim())&&clickedStyle.toLowerCase().toString().trim().equals(owner1.getStyle().toLowerCase().toString().trim())) {
                            // list.add(" " + owner1.getBrand().toString());
                             list.add(" " + parentref);
                         }
@@ -103,6 +104,7 @@ public class Stores_Available extends AppCompatActivity {
                     public void onClick(View view) {
                         Intent intent=new Intent(Stores_Available.this,MapsActivity.class);
                         String store_name=(String)getItem(position);
+                        Toast.makeText(Stores_Available.this, ""+getItem(position), Toast.LENGTH_SHORT).show();
                         intent.putExtra("Store Name",store_name);
                         //go to maps activity
                         startActivity(intent);

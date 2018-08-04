@@ -4,17 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/relativeLayout"
+    android:background="@drawable/animation_list"
     tools:context="com.example.gehna.shopapp.RegisterActivity">
 
-    <EditText
-        android:id="@+id/nameET"
+    <TextView
+        android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/emailET"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:text="Sign Up"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/pacifico"
+        android:textSize="40dp"
+        android:textColor="#fff"/>
+    <EditText
+        android:id="@+id/nameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="Name"
+        android:textColorHint="#fff"
+        android:layout_marginLeft="60dp"
         android:inputType="textPersonName"
         />
 
@@ -22,12 +36,13 @@
         android:id="@+id/emailET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/numberET"
+       android:layout_below="@+id/nameET"
         android:layout_alignLeft="@+id/nameET"
-        android:layout_alignStart="@+id/nameET"
-        android:layout_marginBottom="28dp"
+        android:layout_alignRight="@+id/nameET"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Email"
+        android:textColorHint="#fff"
         android:inputType="textEmailAddress"
          />
 
@@ -36,9 +51,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/emailET"
+        android:layout_alignLeft="@+id/nameET"
+        android:layout_alignRight="@+id/nameET"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Phone"
+        android:textColorHint="#fff"
         android:inputType="number"
          />
 
@@ -48,9 +67,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/numberET"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/nameET"
+        android:layout_alignRight="@+id/nameET"
         android:ems="10"
         android:hint="Password"
+        android:textColorHint="#fff"
         android:inputType="textPassword"
          />
 
@@ -60,8 +82,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordET"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/nameET"
+        android:layout_alignRight="@+id/nameET"
         android:ems="10"
+        android:textColorHint="#fff"
         android:hint="Confirm Password"
         android:inputType="textPassword"
          />
@@ -73,9 +98,8 @@
         android:layout_marginLeft="60dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/confirmpasswordET"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/round_button"
-        android:backgroundTint="#2e2f30"
         android:text="Register"
         android:textColor="#fff"
         />

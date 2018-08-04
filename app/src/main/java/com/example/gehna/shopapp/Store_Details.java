@@ -1,6 +1,7 @@
 package com.example.gehna.shopapp;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -25,11 +27,19 @@ public class Store_Details extends AppCompatActivity {
     EditText ebrand,estyle,ecolor;
 
 
+    RelativeLayout relativeLayout1;
+    AnimationDrawable animationDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store__details);
+
+        relativeLayout1=(RelativeLayout)findViewById(R.id.relativeLayout);
+        animationDrawable=(AnimationDrawable)relativeLayout1.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(2000);
+        animationDrawable.start();
 
         //final ArrayList<String> brands=new ArrayList<String>();
         Button submit =findViewById(R.id.submit);

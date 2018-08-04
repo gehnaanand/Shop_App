@@ -4,16 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/animation_list_2"
+    android:id="@+id/relativeLayout"
     tools:context="com.example.gehna.shopapp.Store_Details">
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Add your Clothing"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/pacifico"
+        android:textSize="40dp"
+        android:textColor="#fff"/>
 
     <EditText
         android:id="@+id/brand"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="50dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="200dp"
         android:ems="10"
+        android:textColorHint="#fff"
         android:inputType="textPersonName"
         android:hint="Brand" />
 
@@ -21,11 +35,12 @@
         android:id="@+id/color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/brand"
         android:layout_alignRight="@+id/brand"
+        android:layout_alignLeft="@+id/brand"
         android:layout_below="@+id/brand"
         android:layout_marginTop="57dp"
         android:ems="10"
+        android:textColorHint="#fff"
         android:inputType="textPersonName"
         android:hint="Color" />
 
@@ -34,20 +49,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/color"
-        android:layout_alignEnd="@+id/color"
+        android:layout_alignLeft="@+id/brand"
         android:layout_alignRight="@+id/color"
         android:layout_marginTop="57dp"
         android:ems="10"
+        android:textColorHint="#fff"
         android:inputType="textPersonName"
         android:hint="Style"
         />
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="60dp"
         android:layout_height="wrap_content"
         android:text="add"
         android:layout_marginTop="30dp"
+        android:background="@drawable/round_button"
+        android:textColor="#fff"
+        android:textStyle="bold"
         android:layout_below="@+id/style"
         android:layout_centerHorizontal="true"/>
 
