@@ -24,7 +24,7 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="FindMyStore"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <ImageView
