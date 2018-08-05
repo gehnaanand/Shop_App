@@ -5,11 +5,16 @@ package com.example.gehna.shopapp;
  */
 
 public class owner {
-    String brand,style,color,store_name,email;
+    String brand,style,color,store_name,email,size;
     double longitude,latitude;
 
-    public owner(String brand, String color, String style ){
+    public owner(){
+
+    }
+
+    public owner(String brand, String color, String style, String size ){
         this.brand = brand;
+        this.size=size;
         this.style = style;
         this.color = color;
     }
@@ -19,6 +24,10 @@ public class owner {
         this.email = email;
         this.latitude=latitude;
         this.longitude=longitude;
+    }
+
+    public String getSize() {
+        return size;
     }
 
     public double getLongitude() {
@@ -37,9 +46,7 @@ public class owner {
         return email;
     }
 
-    public owner(){
 
-    }
     public String getBrand() {
         return brand;
     }

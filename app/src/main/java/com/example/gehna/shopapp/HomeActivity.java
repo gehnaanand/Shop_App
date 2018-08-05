@@ -32,9 +32,9 @@ import java.util.ArrayList;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ArrayList<ShopItem> mShopList,colorlist,styleList;
-    private ShopAdapter mAdapter,colorAdapter,styleAdapter;
-    private String clickedBrand,clickedColor,clickedStyle;
+    private ArrayList<ShopItem> mShopList,colorlist,styleList,sizeList;
+    private ShopAdapter mAdapter,colorAdapter,styleAdapter,sizeAdapter;
+    private String clickedBrand,clickedColor,clickedStyle,clickedSize;
 
 
 
@@ -70,14 +70,17 @@ public class HomeActivity extends AppCompatActivity
         Spinner spinnerShops=findViewById(R.id.spinner_shops);
         Spinner spinnerColor=findViewById(R.id.spinner_color);
         Spinner spinnerStyle=findViewById(R.id.spinner_style);
+        Spinner spinnerSize = findViewById(R.id.spinner_size);
 
         mAdapter=new ShopAdapter(this,mShopList);
         colorAdapter=new ShopAdapter(this,colorlist);
         styleAdapter=new ShopAdapter(this,styleList);
+        sizeAdapter=new ShopAdapter(this,sizeList);
 
         spinnerShops.setAdapter(mAdapter);
         spinnerColor.setAdapter(colorAdapter);
         spinnerStyle.setAdapter(styleAdapter);
+        spinnerSize.setAdapter(sizeAdapter);
 
         spinnerShops.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -121,6 +124,19 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
+        spinnerSize.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ShopItem clickedItem=(ShopItem)parent.getItemAtPosition(position);
+                clickedSize=clickedItem.getShopName();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
         Button submit=findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +146,7 @@ public class HomeActivity extends AppCompatActivity
                 intent.putExtra("Brand",clickedBrand);
                 intent.putExtra("Color",clickedColor);
                 intent.putExtra("Style",clickedStyle);
+                intent.putExtra("Size",clickedSize);
                 startActivity(intent);
             }
         });
@@ -161,6 +178,15 @@ public class HomeActivity extends AppCompatActivity
         styleList.add(new ShopItem("Tops",R.mipmap.tops));
         styleList.add(new ShopItem("Shorts",R.mipmap.shorts));
         styleList.add(new ShopItem("Dress",R.mipmap.dress));
+
+        sizeList=new ArrayList<>();
+        sizeList.add(new ShopItem("XS",R.drawable.xs));
+        sizeList.add(new ShopItem("S",R.drawable.s));
+        sizeList.add(new ShopItem("M",R.drawable.m));
+        sizeList.add(new ShopItem("L",R.drawable.l));
+        sizeList.add(new ShopItem("XL",R.drawable.xl));
+        sizeList.add(new ShopItem("XXL",R.drawable.xxl));
+        sizeList.add(new ShopItem("XXXL",R.drawable.xxxl));
 
     }
 
@@ -206,6 +232,7 @@ public class HomeActivity extends AppCompatActivity
             startActivity(new Intent(this,HomeActivity.class));
             // Handle the camera action
         } else if (id == R.id.nav_search) {
+
 
         } else if (id == R.id.nav_popular) {
 

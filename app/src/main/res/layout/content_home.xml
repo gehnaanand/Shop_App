@@ -46,6 +46,15 @@
         android:layout_centerHorizontal="true"
         android:textAlignment="center"/>
 
+    <Spinner
+        android:id="@+id/spinner_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_style"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"/>
+
 
     <Button
         android:id="@+id/submit"
@@ -56,9 +65,9 @@
         android:layout_marginLeft="40dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/spinner_style"
+        android:layout_below="@+id/spinner_size"
         android:layout_marginTop="50dp"
-        android:text="submit" />
+        android:text="find  your  store" />
 
     <!--<TextView
         android:id="@+id/brand"
