@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -21,6 +21,7 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/permanentmarker_regular"
         android:text="Lets find your store"
+        android:textColor="#000"
         android:textSize="50dp"
         android:layout_marginLeft="100dp" />
     <Spinner
@@ -59,7 +60,7 @@
     <Button
         android:id="@+id/submit"
         android:background="@drawable/round_button"
-        android:backgroundTint="#2e2f30"
+        android:backgroundTint="#2c848e"
         android:textColor="#fff"
         android:layout_width="match_parent"
         android:layout_marginLeft="40dp"
@@ -68,89 +69,6 @@
         android:layout_below="@+id/spinner_size"
         android:layout_marginTop="50dp"
         android:text="find  your  store" />
-
-    <!--<TextView
-        android:id="@+id/brand"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginLeft="20dp"
-        android:background="#e3e6ea"
-        android:padding="10dp"
-        android:text="Brand"
-        android:textSize="25dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="50dp"
-        android:background="#e3e6ea"
-        android:layout_marginRight="20dp"
-        android:text=">"
-        android:textSize="20dp"/>
-    <TextView
-        android:id="@+id/Style"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/brand"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginLeft="20dp"
-        android:background="#e3e6ea"
-        android:padding="10dp"
-        android:text="Style"
-        android:textSize="25dp" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/brand"
-        android:layout_marginTop="50dp"
-        android:background="#e3e6ea"
-        android:layout_marginRight="20dp"
-        android:text=">"
-        android:textSize="20dp"/>
-    <TextView
-        android:id="@+id/color"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Style"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginLeft="20dp"
-        android:background="#e3e6ea"
-        android:padding="10dp"
-        android:text="Color"
-        android:textSize="25dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/Style"
-        android:layout_marginTop="50dp"
-        android:background="#e3e6ea"
-        android:layout_marginRight="20dp"
-        android:text=">"
-        android:textSize="20dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/color"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="submit"/>-->
 
 </RelativeLayout>
 </ScrollView>

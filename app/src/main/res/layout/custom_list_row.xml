@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_marginBottom="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<android.support.v7.widget.CardView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="5dp">
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,14 +23,20 @@
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp"
+        android:textColor="#000"
         android:layout_alignBottom="@+id/maps"/>
     <Button
         android:id="@+id/maps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="maps"
+        android:text="directions"
+        android:backgroundTint="#2c848e"
+        android:textColor="#fff"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"/>
 </RelativeLayout>
+</android.support.v7.widget.CardView>
+</LinearLayout>
