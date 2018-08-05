@@ -231,7 +231,7 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             startActivity(new Intent(this,HomeActivity.class));
             // Handle the camera action
-        } else if (id == R.id.nav_search) {
+        }/* else if (id == R.id.nav_search) {
 
 
         } else if (id == R.id.nav_popular) {
@@ -240,7 +240,7 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_logout) {
+        } */else if (id == R.id.nav_logout) {
 
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
