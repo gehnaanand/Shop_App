@@ -77,7 +77,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         if (parentref.toString().trim().equals(store_name.toString().trim())) {
                             LatLng location = new LatLng(owner1.getLatitude(), owner1.getLongitude());
                             mMap.addMarker(new MarkerOptions().position(location).title(owner1.store_name)).setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-                            CameraUpdate update=CameraUpdateFactory.newLatLngZoom(location,20);
+                            CameraUpdate update=CameraUpdateFactory.newLatLngZoom(location,15);
                             mMap.moveCamera(update);
                             //mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
                         }
