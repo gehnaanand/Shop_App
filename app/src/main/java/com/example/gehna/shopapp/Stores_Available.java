@@ -32,12 +32,13 @@ public class Stores_Available extends AppCompatActivity {
         setContentView(R.layout.activity_stores__available);
 
         final ListView listView=findViewById(R.id.listview);
-        final String clickedBrand,clickedColor,clickedStyle;
+        final String clickedBrand,clickedColor,clickedStyle,clickedSize;
 
         Intent intent=getIntent();
         clickedBrand=intent.getStringExtra("Brand");
         clickedColor=intent.getStringExtra("Color");
         clickedStyle=intent.getStringExtra("Style");
+        clickedSize=intent.getStringExtra("Size");
 
         FirebaseDatabase database;
         DatabaseReference ref;
@@ -58,7 +59,8 @@ public class Stores_Available extends AppCompatActivity {
                         String parentref=ds.getRef().getParent().getKey();
                         //Log.d("Parent= ",parentref);
                         if(clickedBrand.toLowerCase().toString().trim().equals(owner1.getBrand().toLowerCase().toString().trim())&&clickedColor.toLowerCase().toString().trim().equals(owner1.getColor().toLowerCase()
-                        .toString().trim())&&clickedStyle.toLowerCase().toString().trim().equals(owner1.getStyle().toLowerCase().toString().trim())) {
+                        .toString().trim())&&clickedStyle.toLowerCase().toString().trim().equals(owner1.getStyle().toLowerCase().toString().trim())&&clickedSize.toLowerCase().toString().trim().equals(owner1.getSize().toLowerCase()
+                        .toString().trim())) {
                            // list.add(" " + owner1.getBrand().toString());
                             list.add(" " + parentref);
                         }

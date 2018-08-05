@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -23,11 +24,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class Store_Details extends AppCompatActivity {
-    String brand,color,style;
-    EditText ebrand,estyle,ecolor;
+    String brand,color,style,size;
+    EditText ebrand,estyle,ecolor,esize;
 
 
-    RelativeLayout relativeLayout1;
+    ScrollView scrollView;
     AnimationDrawable animationDrawable;
 
     @Override
@@ -35,8 +36,8 @@ public class Store_Details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store__details);
 
-        relativeLayout1=(RelativeLayout)findViewById(R.id.relativeLayout);
-        animationDrawable=(AnimationDrawable)relativeLayout1.getBackground();
+        scrollView=(ScrollView) findViewById(R.id.scrollView);
+        animationDrawable=(AnimationDrawable)scrollView.getBackground();
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(2000);
         animationDrawable.start();
@@ -51,10 +52,12 @@ public class Store_Details extends AppCompatActivity {
                 ebrand=findViewById(R.id.brand);
                 estyle=findViewById(R.id.style);
                 ecolor=findViewById(R.id.color);
+                esize=findViewById(R.id.size);
 
                 brand=ebrand.getText().toString();
                 color=ecolor.getText().toString();
                 style=estyle.getText().toString();
+                size=esize.getText().toString();
 
                 Intent intent=getIntent();
                 String store_name=intent.getStringExtra("Store Name");
@@ -62,7 +65,7 @@ public class Store_Details extends AppCompatActivity {
                 //String store_name_ref=store_details.child(store_name).getKey();
 
 
-                final owner clothing=new owner(brand,color,style);
+                final owner clothing=new owner(brand,color,style,size);
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference ref = database.getReference("Documents");
                 //DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Document");
@@ -72,6 +75,7 @@ public class Store_Details extends AppCompatActivity {
                 ebrand.setText("");
                 estyle.setText("");
                 ecolor.setText("");
+                esize.setText(" ");
                 //storeRef.push().setValue(clothing);
 
             }
