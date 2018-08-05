@@ -30,7 +30,7 @@
         <activity android:name=".ForgotPassActivity" />
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
+            android:label="Home"
             android:theme="@style/AppTheme" />
         <activity android:name=".Store_Login" />
         <activity android:name=".Store_Details" />

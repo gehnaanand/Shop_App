@@ -68,8 +68,9 @@ public class Store_Register extends AppCompatActivity {
                 final String cpassword=confirm_pass.getText().toString();
                 final String store_name_str=store_name.getText().toString();
                 final String phone_str=phone.getText().toString().trim();
-                final double longitude_str=Double.parseDouble(longitude.getText().toString().trim());
-                final double latitude_str=Double.parseDouble(latitude.getText().toString().trim());
+                final String longitude_str = longitude.getText().toString().trim();
+                final String latitude_str = latitude.getText().toString().trim();
+
                 Drawable drawable=getResources().getDrawable(R.drawable.ic_error);
 
 
@@ -84,10 +85,12 @@ public class Store_Register extends AppCompatActivity {
                 else if(TextUtils.isEmpty(phone_str)){
                     phone.setError("Enter Phone Number",drawable);
                 }
-                else if(longitude.getText().toString().trim().isEmpty()){
+                else if(TextUtils.isEmpty(longitude_str)){
+                    longitude.requestFocus();
                     longitude.setError("Enter Longitude",drawable);
                 }
-                else if(latitude.getText().toString().trim().isEmpty()){
+                else if(TextUtils.isEmpty(latitude_str)){
+                    latitude.requestFocus();
                     latitude.setError("Enter Latitude",drawable);
                 }
                 else if (TextUtils.isEmpty(password_str)){
@@ -113,7 +116,9 @@ public class Store_Register extends AppCompatActivity {
                                 Toast.makeText(Store_Register.this, "Authentication failed." + task.getException(),
                                         Toast.LENGTH_SHORT).show();
                             } else {
-                                owner owner1=new owner(store_name_str,email_str,longitude_str,latitude_str);
+                                final double longitude_double=Double.parseDouble(longitude.getText().toString().trim());
+                                final double latitude_double=Double.parseDouble(latitude.getText().toString().trim());
+                                owner owner1=new owner(store_name_str,email_str,longitude_double,latitude_double);
                                 DatabaseReference ref=FirebaseDatabase.getInstance().getReference("Store_Details");
                                 DatabaseReference childref=ref.child(store_name_str).push();
                                 childref.setValue(owner1);

@@ -25,7 +25,7 @@
         android:layout_marginLeft="50dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:ems="10"
         android:textColorHint="#fff"
         android:inputType="textPersonName"
@@ -64,12 +64,27 @@
         android:layout_marginLeft="60dp"
         android:layout_height="wrap_content"
         android:text="add"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/round_button"
         android:textColor="#fff"
         android:textStyle="bold"
         android:layout_below="@+id/style"
         android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="60dp"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/round_button"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_below="@+id/style"
+        android:layout_centerHorizontal="true"/>
+
+
 
 
 

@@ -43,6 +43,7 @@ public class Store_Details extends AppCompatActivity {
 
         //final ArrayList<String> brands=new ArrayList<String>();
         Button submit =findViewById(R.id.submit);
+        Button logout = findViewById((R.id.logout));
 
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +75,16 @@ public class Store_Details extends AppCompatActivity {
                 ecolor.setText("");
                 //storeRef.push().setValue(clothing);
 
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(Store_Details.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
