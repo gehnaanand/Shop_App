@@ -22,15 +22,18 @@ public class SlideAdapter extends PagerAdapter{
             R.mipmap.img2,
             R.mipmap.img3,
             R.mipmap.img4,
-            R.mipmap.img5
+            R.mipmap.img5,
+            R.mipmap.img6
     };
     //list of titles
     public String[] lst_title = {
-            "This is the home page",
             "First, select the brand",
             "Select the color",
             "Select the type of clothing",
-            "Select the size"
+            "Select the size",
+            "Shops with the item will be displayed",
+            "Navigate to the shop"
+
     };
 
     //list of description
@@ -42,11 +45,15 @@ public class SlideAdapter extends PagerAdapter{
 
 
     //list of background colors
-    //public int[] lst_background = {
-    //        Color.rgb(55,55,55),
-    //        Color.rgb(239,85,85),
-    //        Color.rgb(110, 49, 89)
-    //};
+    public int[] lst_background = {
+          R.drawable.animation_list,
+            R.drawable.animation_list_2,
+            R.drawable.animation_list,
+            R.drawable.animation_list_2,
+            R.drawable.animation_list,
+            R.drawable.animation_list_2
+
+    };
 
     public SlideAdapter(Context context){
         this.context = context;

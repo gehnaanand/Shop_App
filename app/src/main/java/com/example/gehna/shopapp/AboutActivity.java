@@ -60,7 +60,7 @@ public class AboutActivity extends AppCompatActivity {
 
 
     public void addDotsIndicator(int position){
-        nDots = new TextView[5];
+        nDots = new TextView[6];
         nDotLayout.removeAllViews();
 
         for(int i = 0; i < nDots.length; i++) {
