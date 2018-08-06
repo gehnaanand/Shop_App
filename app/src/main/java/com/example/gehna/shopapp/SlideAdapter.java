@@ -66,7 +66,7 @@ public class SlideAdapter extends PagerAdapter{
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((LinearLayout)object);
+        container.removeView((RelativeLayout)object);
 
     }
 
@@ -74,7 +74,7 @@ public class SlideAdapter extends PagerAdapter{
     public Object instantiateItem( ViewGroup container, int position) {
         inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.slide,container,false);
-        LinearLayout linearslide = view.findViewById(R.id.slidelinearlayout);
+        RelativeLayout linearslide = view.findViewById(R.id.slidelinearlayout);
         ImageView imgslide = (ImageView) view.findViewById(R.id.slideimg);
         TextView title = (TextView) view.findViewById(R.id.title);
         //TextView description = (TextView) view.findViewById(R.id.)
@@ -89,6 +89,6 @@ public class SlideAdapter extends PagerAdapter{
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return (view==(LinearLayout)object);
+        return (view==(RelativeLayout)object);
     }
 }

@@ -88,9 +88,5 @@ public class ReviewActivity extends AppCompatActivity {
                 Toast.makeText(ReviewActivity.this, "Ratings Submitted", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
-
-
 }
