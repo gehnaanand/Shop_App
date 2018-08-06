@@ -31,8 +31,8 @@ public class SlideAdapter extends PagerAdapter{
             "Select the color",
             "Select the type of clothing",
             "Select the size",
-            "Shops with the item will be displayed",
-            "Navigate to the shop"
+            "Stores with the item will be displayed",
+            "Navigate to the store"
 
     };
 
