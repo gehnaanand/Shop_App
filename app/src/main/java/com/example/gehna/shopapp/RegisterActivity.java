@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
 
     RelativeLayout relativeLayout;
+    ProgressBar progressBar;
     AnimationDrawable animationDrawable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.passwordET);
         cpassword = findViewById(R.id.confirmpasswordET);
         registerButton = findViewById(R.id.registerButton);
+        progressBar=findViewById(R.id.progressBar);
         firebaseAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -52,30 +55,39 @@ public class RegisterActivity extends AppCompatActivity {
                 String mailStr = mail.getText().toString().trim();
                 String passwordStr = password.getText().toString().trim();
                 String cpasswordStr = cpassword.getText().toString().trim();
+                progressBar.setVisibility(View.VISIBLE);
                 
                 if (TextUtils.isEmpty(mailStr) && TextUtils.isEmpty(passwordStr)){
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(RegisterActivity.this, "Enter Email and Password", Toast.LENGTH_SHORT).show();
                 }
                 else if(TextUtils.isEmpty(mailStr)){
+                    progressBar.setVisibility(View.GONE);
                     mail.setError("Enter Email");
                     return;
                     //Toast.makeText(RegisterActivity.this, "Enter Email", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(passwordStr)){
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(RegisterActivity.this, "Enter Password", Toast.LENGTH_SHORT).show();
                 } else if(TextUtils.isEmpty(cpasswordStr)){
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(RegisterActivity.this, "Confirm Password", Toast.LENGTH_SHORT).show();
                 }else if(!password.getText().toString().equals(cpassword.getText().toString())){
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(RegisterActivity.this, "Password does not match", Toast.LENGTH_SHORT).show();
                 } else if(passwordStr.length() < 6){
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(RegisterActivity.this, "Password must be minimum 6 characters!", Toast.LENGTH_SHORT).show();
                 } else {
                     firebaseAuth.createUserWithEmailAndPassword(mailStr, passwordStr).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                progressBar.setVisibility(View.VISIBLE);
                                 Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                             } else {
+                                progressBar.setVisibility(View.GONE);
                                 Toast.makeText(RegisterActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -86,7 +98,5 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
-
-
-    }
+}
 

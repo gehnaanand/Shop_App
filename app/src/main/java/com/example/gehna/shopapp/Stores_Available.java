@@ -2,6 +2,7 @@ package com.example.gehna.shopapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class Stores_Available extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,8 +86,10 @@ public class Stores_Available extends AppCompatActivity {
 
             }
         });
+
     }
     private class MyListAdapter extends ArrayAdapter<String>{
+        String phone;
         private int layout;
         public MyListAdapter(@NonNull Context context, int resource,ArrayList<String> list) {
             super(context, resource,list);
@@ -95,6 +100,7 @@ public class Stores_Available extends AppCompatActivity {
         @Override
         public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             ViewHolder mainViewHolder=null;
+
             if(convertView==null){
                 LayoutInflater inflater=LayoutInflater.from(getContext());
                 convertView=inflater.inflate(layout,parent,false);
@@ -128,4 +134,5 @@ public class Stores_Available extends AppCompatActivity {
         TextView textView;
         ImageButton button;
     }
+
 }
