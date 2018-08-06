@@ -6,19 +6,20 @@
     android:gravity="center">
 
     <TextView
+        android:gravity="center"
         android:id="@+id/title"
         android:textColor="#fff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Testing"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textSize="30dp" />
 
     <ImageView
         android:id="@+id/slideimg"
         android:layout_width="281dp"
-        android:layout_height="500dp"
+        android:layout_height="460dp"
         android:layout_below="@+id/title"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
