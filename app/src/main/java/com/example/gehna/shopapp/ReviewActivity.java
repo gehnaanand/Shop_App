@@ -34,7 +34,7 @@ public class ReviewActivity extends AppCompatActivity {
         final String user = auth.getCurrentUser().getUid();
         submit = findViewById(R.id.submit);
         smileRating = findViewById(R.id.smile_rating);
-//        smileRating.setSelectedSmile(BaseRating.GOOD,true);
+
 
 
 
