@@ -2,12 +2,18 @@
 <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eff0f2"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/animation_list"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- android:background="#eff0f2" -->
+
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.gehna.shopapp.HomeActivity"
@@ -60,15 +66,17 @@
 
     <Button
         android:id="@+id/submit"
-        android:background="@drawable/round_button"
+        android:background="@color/black"
         android:backgroundTint="#2c848e"
-        android:textColor="#fff"
+        android:textColor="#000"
+
         android:layout_width="match_parent"
         android:layout_marginLeft="40dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/spinner_size"
         android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
         android:text="find  your  store" />
 
 </RelativeLayout>

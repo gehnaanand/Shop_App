@@ -231,12 +231,12 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             startActivity(new Intent(this,HomeActivity.class));
             // Handle the camera action
-        }/* else if (id == R.id.nav_search) {
+        }else if (id == R.id.nav_about) {
+            startActivity(new Intent(this, AboutActivity.class));
 
-
-        } else if (id == R.id.nav_popular) {
-
-        } else if (id == R.id.nav_wishlist) {
+        } else if (id == R.id.nav_rating) {
+            startActivity(new Intent(this, ReviewActivity.class));
+        } /*else if (id == R.id.nav_wishlist) {
 
         } else if (id == R.id.nav_share) {
 
