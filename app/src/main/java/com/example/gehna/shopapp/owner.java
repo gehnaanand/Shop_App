@@ -26,6 +26,7 @@ public class owner {
         this.longitude=longitude;
     }
 
+
     public String getSize() {
         return size;
     }

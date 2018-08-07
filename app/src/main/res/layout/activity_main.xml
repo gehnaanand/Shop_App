@@ -23,6 +23,7 @@
 
     <EditText
         android:id="@+id/email"
+        android:drawableLeft="@drawable/ic_action_email"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textview"
@@ -37,6 +38,7 @@
 
     <EditText
         android:id="@+id/password"
+        android:drawableLeft="@drawable/ic_action_name"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/email"

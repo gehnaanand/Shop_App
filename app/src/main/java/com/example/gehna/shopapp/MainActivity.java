@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
                         if(!task.isSuccessful()){
                             //if there is error
+                            progressBar.setVisibility(View.GONE);
                                 Toast.makeText(MainActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
 
                         } else {

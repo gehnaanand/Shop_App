@@ -25,12 +25,22 @@
         android:layout_marginTop="20dp"
         android:textColor="#000"
         android:layout_alignBottom="@+id/maps"/>
+    <!--<ImageButton
+        android:id="@+id/call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/maps"
+        android:layout_alignBottom="@+id/maps"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#fff"
+        android:src="@drawable/ic_action_call"/>-->
+
     <ImageButton
-        android:src="@drawable/ic_action_maps"
+        android:src="@drawable/ic_action_direction"
         android:id="@+id/maps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#2c848e"
+        android:backgroundTint="#fff"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
